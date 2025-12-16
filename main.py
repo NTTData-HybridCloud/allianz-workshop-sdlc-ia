@@ -34,6 +34,30 @@ def subtract_numbers(a, b):
     """
     return a - b
 
+def divide_numbers(a, b):
+    """Return the quotient of a divided by b.
+
+    Parameters
+    ----------
+    a : int | float
+        Dividend (number to be divided).
+    b : int | float
+        Divisor (number to divide by).
+
+    Returns
+    -------
+    float
+        Quotient of a divided by b (a / b).
+
+    Raises
+    ------
+    ZeroDivisionError
+        If b is zero.
+    """
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
+    return a / b
+
 # Main execution
 if __name__ == "__main__":
     result = add_numbers(5, 7)
@@ -41,3 +65,6 @@ if __name__ == "__main__":
     
     result_sub = subtract_numbers(10, 3)
     print(f"The difference of 10 and 3 is: {result_sub}")
+    
+    result_div = divide_numbers(20, 4)
+    printer(f"The division of 20 by 4 is: {result_div}")
