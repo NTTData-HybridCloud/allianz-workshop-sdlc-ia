@@ -1,5 +1,5 @@
 import unittest
-from main import add_numbers, subtract_numbers
+from main import add_numbers, subtract_numbers, divide_numbers
 
 class TestAddNumbers(unittest.TestCase):
     def test_integers(self):
@@ -42,6 +42,43 @@ class TestSubtractNumbers(unittest.TestCase):
             _ = subtract_numbers(None, 2)
         with self.assertRaises(TypeError):
             _ = subtract_numbers(10, 'b')
+
+class TestDivideNumbers(unittest.TestCase):
+    def test_integers(self):
+        self.assertEqual(divide_numbers(10, 2), 5.0)
+        self.assertEqual(divide_numbers(20, 4), 5.0)
+        self.assertEqual(divide_numbers(9, 3), 3.0)
+        self.assertEqual(divide_numbers(-10, 2), -5.0)
+        self.assertEqual(divide_numbers(-20, -4), 5.0)
+        self.assertEqual(divide_numbers(15, -3), -5.0)
+
+    def test_floats(self):
+        self.assertAlmostEqual(divide_numbers(5.5, 2.0), 2.75)
+        self.assertAlmostEqual(divide_numbers(7.5, 2.5), 3.0)
+        self.assertAlmostEqual(divide_numbers(1.0, 3.0), 0.3333333333333333)
+        self.assertAlmostEqual(divide_numbers(-6.5, 2.0), -3.25)
+        self.assertAlmostEqual(divide_numbers(2e100, 2.0), 1e100)
+
+    def test_division_by_zero(self):
+        # Test that division by zero raises ZeroDivisionError
+        with self.assertRaises(ZeroDivisionError) as context:
+            _ = divide_numbers(10, 0)
+        self.assertEqual(str(context.exception), "Cannot divide by zero")
+        
+        with self.assertRaises(ZeroDivisionError):
+            _ = divide_numbers(0, 0)
+        
+        with self.assertRaises(ZeroDivisionError):
+            _ = divide_numbers(-5, 0)
+
+    def test_type_errors(self):
+        # Demonstrate behavior with non-numeric inputs (should raise TypeError)
+        with self.assertRaises(TypeError):
+            _ = divide_numbers('a', 1)
+        with self.assertRaises(TypeError):
+            _ = divide_numbers(None, 2)
+        with self.assertRaises(TypeError):
+            _ = divide_numbers(10, 'b')
 
 if __name__ == '__main__':
     unittest.main()

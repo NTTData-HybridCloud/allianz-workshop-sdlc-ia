@@ -23,6 +23,17 @@ result = subtract_numbers(10, 3)
 print(result)  # Output: 7
 ```
 
+### Division
+The `divide_numbers(a, b)` function returns the quotient of dividing two numbers.
+
+**Usage:**
+```python
+result = divide_numbers(20, 4)
+print(result)  # Output: 5.0
+```
+
+**Note:** Division by zero will raise a `ZeroDivisionError`.
+
 ## Parameters
 
 Both functions accept:
@@ -33,6 +44,7 @@ Both functions accept:
 
 - `add_numbers`: Returns the sum (a + b)
 - `subtract_numbers`: Returns the difference (a - b)
+- `divide_numbers`: Returns the quotient (a / b)
 
 ## Testing
 
