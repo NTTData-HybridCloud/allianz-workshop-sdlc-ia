@@ -67,4 +67,4 @@ if __name__ == "__main__":
     print(f"The difference of 10 and 3 is: {result_sub}")
     
     result_div = divide_numbers(20, 4)
-    printer(f"The division of 20 by 4 is: {result_div}")
+    print(f"The division of 20 by 4 is: {result_div}")
