@@ -1,6 +1,20 @@
 # Simple Python Demo
 
 def add_numbers(a, b):
+    """Return the sum of a and b.
+
+    Parameters
+    ----------
+    a : int | float
+        First addend.
+    b : int | float
+        Second addend.
+
+    Returns
+    -------
+    int | float
+        Sum of a and b.
+    """
     return a + b
 
 # Main execution
