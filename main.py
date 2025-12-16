@@ -40,4 +40,4 @@ if __name__ == "__main__":
     print(f"The sum of 5 and 7 is: {result}")
     
     result_sub = subtract_numbers(10, 3)
-    printer(f"The difference of 10 and 3 is: {result_sub}")
+    print(f"The difference of 10 and 3 is: {result_sub}")
